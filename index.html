@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="title">Registration</div>
+            <div class="content">
+                <form action="" method="POST" class="form" id="register-form">
+                    <div class="user-details">
+                        <div class="form-group">
+                            <span class="details">Full Name</span>
+                            <input id="fullname" name="fullname" rules="required" type="text"
+                                placeholder="Enter your name" class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="details">Username</span>
+                            <input id="username" name="username" rules="required" type="text"
+                                placeholder="Enter your username" class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="details">Email</span>
+                            <input id="email" name="email" rules="required|email" type="text"
+                                placeholder="Enter your email" class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="details">Phone Number</span>
+                            <input id="tel" name="tel" rules="required|phone" type="text" placeholder="Enter your number"
+                                class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="details">Password</span>
+                            <input id="password" name="password" rules="required|min:6" type="password"
+                                placeholder="Enter your password" class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="details">Confirm Password</span>
+                            <input id="password_confirmation" name="password_confirmation" rules="required|confirm"
+                                placeholder="Confirm your password" type="password" class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+                    </div>
+
+                    <div class="gender-details">
+                        <div class="form-group">
+                            <input name="gender" rules="required" type="radio" value="male" class="form-control" id="dot-1">
+                            <input name="gender" rules="required" type="radio" value="female" class="form-control" id="dot-2">
+                            <input name="gender" rules="required" type="radio" value="other" class="form-control" id="dot-3">
+                            <span class="gender-title">Gender</span>
+                            <div class="category">
+                                <label for="dot-1">
+                                    <span class="dot one"></span>
+                                    <span class="gender">Male</span>
+                                </label>
+                                <label for="dot-2">
+                                    <span class="dot two"></span>
+                                    <span class="gender">Female</span>
+                                </label>
+                                <label for="dot-3">
+                                    <span class="dot three"></span>
+                                    <span class="gender">Other</span>
+                                </label>
+                            </div>
+                            <span class="form-message"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="button">
+                        <input type="submit" value="Register">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/validator.js"></script>
+    <script>
+        // Validator('#register-form');
+
+        let form = new Validator('#register-form');
+
+        form.onSubmit = (formData) => {
+            console.log(formData);
+        }
+    </script>
+</body>
+
+</html>
